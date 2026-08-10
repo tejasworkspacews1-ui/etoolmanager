@@ -1,0 +1,116 @@
+# =============================================================================
+# Project      : eToolManager
+# File         : etoolmanager/config/tools.yaml
+# Purpose      : Declarative registry of supported external tools.
+#
+# Author       : Tejas Kamble
+# Email        : tejasksocials@gmail.com
+# Phone        : +91 8928545352
+# Portfolio    : https://tejas-personal-portfolio-dev.vercel.app/
+# LinkedIn     : https://www.linkedin.com/in/tejas-kamble-5342443b1
+# GitHub       : https://github.com/tejasworkspacews1-ui
+#
+# Repository   : https://github.com/tejasworkspacews1-ui/etoolmanager
+# Created      : 2026
+#
+# Developed by Tejas Kamble as a submission prototype for the
+# FOSSEE eSim Semester Long Internship - Autumn 2026
+# (Task 5: Automated Tool Manager).
+#
+# This file describes each managed tool declaratively. Adding a new tool
+# requires only a new YAML block; no Python code changes are needed unless
+# the tool needs custom install logic.
+# =============================================================================
+
+tools:
+  git:
+    display_name: "Git"
+    description: "Distributed version control system required by eSim for project management."
+    default_version: "2.25.0"
+    version_command: ["git", "--version"]
+    version_regex: "git version (\\d+\\.\\d+(?:\\.\\d+)?)"
+    binary_names: ["git"]
+    install:
+      ubuntu: ["apt-get", "install", "-y", "git"]
+      debian: ["apt-get", "install", "-y", "git"]
+      fedora: ["dnf", "install", "-y", "git"]
+      arch: ["pacman", "-S", "--noconfirm", "git"]
+      windows: ["winget", "install", "--id", "Git.Git", "--accept-source-agreements", "--accept-package-agreements"]
+      macos: ["brew", "install", "git"]
+    uninstall:
+      ubuntu: ["apt-get", "remove", "-y", "git"]
+      debian: ["apt-get", "remove", "-y", "git"]
+      fedora: ["dnf", "remove", "-y", "git"]
+      arch: ["pacman", "-R", "--noconfirm", "git"]
+      windows: ["winget", "uninstall", "--id", "Git.Git"]
+      macos: ["brew", "uninstall", "git"]
+    required_for_esim: true
+
+  python:
+    display_name: "Python"
+    description: "Interpreted programming language used by the eSim core engine."
+    default_version: "3.11.0"
+    version_command: ["python", "--version"]
+    version_regex: "Python (\\d+\\.\\d+(?:\\.\\d+)?)"
+    binary_names: ["python", "python3"]
+    install:
+      ubuntu: ["apt-get", "install", "-y", "python3", "python3-pip"]
+      debian: ["apt-get", "install", "-y", "python3", "python3-pip"]
+      fedora: ["dnf", "install", "-y", "python3", "python3-pip"]
+      arch: ["pacman", "-S", "--noconfirm", "python", "python-pip"]
+      windows: ["winget", "install", "--id", "Python.Python.3.11", "--accept-source-agreements", "--accept-package-agreements"]
+      macos: ["brew", "install", "python@3.11"]
+    uninstall:
+      ubuntu: ["apt-get", "remove", "-y", "python3"]
+      debian: ["apt-get", "remove", "-y", "python3"]
+      fedora: ["dnf", "remove", "-y", "python3"]
+      arch: ["pacman", "-R", "--noconfirm", "python"]
+      windows: ["winget", "uninstall", "--id", "Python.Python.3.11"]
+      macos: ["brew", "uninstall", "python@3.11"]
+    required_for_esim: true
+
+  kicad:
+    display_name: "KiCad"
+    description: "Open-source EDA suite used by eSim for schematic capture and PCB layout."
+    default_version: "7.0.0"
+    version_command: ["kicad", "--version"]
+    version_regex: "(\\d+\\.\\d+(?:\\.\\d+)?)"
+    binary_names: ["kicad"]
+    install:
+      ubuntu: ["apt-get", "install", "-y", "kicad"]
+      debian: ["apt-get", "install", "-y", "kicad"]
+      fedora: ["dnf", "install", "-y", "kicad"]
+      arch: ["pacman", "-S", "--noconfirm", "kicad"]
+      windows: ["winget", "install", "--id", "KiCad.KiCad", "--accept-source-agreements", "--accept-package-agreements"]
+      macos: ["brew", "install", "--cask", "kicad"]
+    uninstall:
+      ubuntu: ["apt-get", "remove", "-y", "kicad"]
+      debian: ["apt-get", "remove", "-y", "kicad"]
+      fedora: ["dnf", "remove", "-y", "kicad"]
+      arch: ["pacman", "-R", "--noconfirm", "kicad"]
+      windows: ["winget", "uninstall", "--id", "KiCad.KiCad"]
+      macos: ["brew", "uninstall", "--cask", "kicad"]
+    required_for_esim: true
+
+  ngspice:
+    display_name: "Ngspice"
+    description: "Mixed-signal circuit simulator used as the simulation engine by eSim."
+    default_version: "37.0.0"
+    version_command: ["ngspice", "--version"]
+    version_regex: "(\\d+\\.\\d+(?:\\.\\d+)?)"
+    binary_names: ["ngspice"]
+    install:
+      ubuntu: ["apt-get", "install", "-y", "ngspice"]
+      debian: ["apt-get", "install", "-y", "ngspice"]
+      fedora: ["dnf", "install", "-y", "ngspice"]
+      arch: ["pacman", "-S", "--noconfirm", "ngspice"]
+      windows: ["winget", "install", "--id", "ngspice.ngspice", "--accept-source-agreements", "--accept-package-agreements"]
+      macos: ["brew", "install", "ngspice"]
+    uninstall:
+      ubuntu: ["apt-get", "remove", "-y", "ngspice"]
+      debian: ["apt-get", "remove", "-y", "ngspice"]
+      fedora: ["dnf", "remove", "-y", "ngspice"]
+      arch: ["pacman", "-R", "--noconfirm", "ngspice"]
+      windows: ["winget", "uninstall", "--id", "ngspice.ngspice"]
+      macos: ["brew", "uninstall", "ngspice"]
+    required_for_esim: true

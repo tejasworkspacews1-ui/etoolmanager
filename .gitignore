@@ -1,0 +1,97 @@
+# =============================================================================
+# Project      : eToolManager
+# File         : .gitignore
+# Purpose      : Ignore generated, environment-specific, and sensitive files
+#                from version control.
+#
+# Author       : Tejas Kamble
+# Email        : tejasksocials@gmail.com
+# Phone        : +91 8928545352
+# Portfolio    : https://tejas-personal-portfolio-dev.vercel.app/
+# LinkedIn     : https://www.linkedin.com/in/tejas-kamble-5342443b1
+# GitHub       : https://github.com/tejasworkspacews1-ui
+#
+# Repository   : https://github.com/tejasworkspacews1-ui/etoolmanager
+# Created      : 2026
+#
+# Developed by Tejas Kamble as a submission prototype for the
+# FOSSEE eSim Semester Long Internship - Autumn 2026
+# (Task 5: Automated Tool Manager).
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checking / linters
+.mypy_cache/
+.pytype/
+.pyre/
+.dmypy.json
+dmypy.json
+
+# Runtime / logs
+*.log
+logs/
+etoolmanager/**/*.log
+
+# Reports (generated, keep sample reports manually)
+reports/*.md
+reports/*.json
+!reports/report-sample.md
+!reports/report-sample.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
